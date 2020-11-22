@@ -2031,3 +2031,12 @@ footer .credits {
     object-fit: cover;
   }*/
 }
+
+/*
+ Custom css
+ */
+
+.carousel-image-wrapper {
+  max-height: 700px;
+  width: auto;
+}

@@ -25,7 +25,6 @@ window.addEventListener('load', () => {
       const minprice = document.getElementById('minprice');
       minprice.innerHTML = `Des de ${formatDigit(response.min_price)}€`;
 
-
       const amenities = document.getElementById('amenities');
       response.amenties.forEach(amenity => {
         const listItem = document.createElement("li");
@@ -33,26 +32,38 @@ window.addEventListener('load', () => {
         amenities.appendChild(listItem);
       });
 
-      // const carouseldiv = document.getElementById('property-single-carousel');
-      // response.pictures.forEach(pictureURL => {
-      //   carouseldiv.innerHTML += `
-      //     <div class="carousel-item-b">
-      //       <img src="${'https://admin.pisosautoproject.com' + pictureURL}" alt="">
-      //     </div>
-      //   `
-      // });
-      //
-      // $('#property-single-carousel').owlCarousel({
-      //   loop: true,
-      //   margin: 0,
-      //   nav: true,
-      //   navText: ['<i class="ion-ios-arrow-back" aria-hidden="true"></i>', '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'],
-      //   responsive: {
-      //     0: {
-      //       items: 1,
-      //     }
-      //   }
-      // });
+      const carouselWrapper = document.getElementById('carousel-wrapper');
+      const carousel = document.createElement('div');
+      carousel.id = 'property-single-carousel';
+      carousel.className = 'owl-carousel owl-arrow gallery-property';
+
+      response.pictures.forEach(pictureURL => {
+        const carouselItem = document.createElement('div');
+        carouselItem.className = 'carousel-item-b carousel-image-wrapper';
+
+        const itemImage = document.createElement('img');
+        itemImage.src = 'https://admin.pisosautoproject.com' + pictureURL;
+
+        carouselItem.appendChild(itemImage);
+        carousel.appendChild(carouselItem);
+      });
+
+      carouselWrapper.appendChild(carousel);
+
+      $('#property-single-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        navText: [
+          '<i class="ion-ios-arrow-back" aria-hidden="true"></i>',
+          '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          }
+        }
+      });
 
     });
 });
