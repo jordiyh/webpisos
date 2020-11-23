@@ -82,7 +82,7 @@ function onSubmitContactForm(event) {
   const nameInput = document.getElementById('inputName');
   const emailInput = document.getElementById('inputEmail');
   const phoneInput = document.getElementById('inputPhone');
-  const messageInput = document.getElementById('textMessage');
+  const messageInput = document.getElementById('inputMessage');
 
   const formData = new FormData();
   formData.append('name', nameInput.value);
