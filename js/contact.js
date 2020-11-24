@@ -17,7 +17,7 @@ function onSubmitContactForm(event) {
   formData.append('phone', phoneInput.value)
   formData.append('comment', messageInput.value)
 
-  fetch('http://localhost:8000/api/v1/contact', {
+  fetch('https://admin.pisosautoproject.com/api/v1/contact', {
     method: 'POST',
     body: formData,
   }).then(response => response.json().then(jsonResponse => {
