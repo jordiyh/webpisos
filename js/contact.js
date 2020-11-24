@@ -14,12 +14,27 @@ function onSubmitContactForm(event) {
   const formData = new FormData();
   formData.append('name', nameInput.value)
   formData.append('email', emailInput.value)
-  formData.append('subject', phoneInput.value)
-  formData.append('message', messageInput.value)
+  formData.append('phone', phoneInput.value)
+  formData.append('comment', messageInput.value)
 
-  formData.forEach((value, key)=> {
-    console.log(key + ' -> ' + value);
-  });
+  fetch('http://localhost:8000/api/v1/contact', {
+    method: 'POST',
+    body: formData,
+  }).then(response => response.json().then(jsonResponse => {
+    if (jsonResponse.success) {
+      Swal.fire({
+        title: 'Fet!',
+        text: 'Formulari enviat.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        nameInput.value = '';
+        emailInput.value = '';
+        phoneInput.value = '';
+        messageInput.value = '';
+      });
+    }
+  }));
 
   return false;
 }
