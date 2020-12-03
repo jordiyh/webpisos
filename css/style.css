@@ -2040,3 +2040,9 @@ footer .credits {
   max-height: 700px;
   width: auto;
 }
+
+.divider {
+  height: 3px;
+  background-color: #2eca6a;
+  border: none;
+}
