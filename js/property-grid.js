@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                        <span class="price-a">Desde ${project.min_price}€</span>
+                        <span class="price-a">Desde ${formatDigit(project.min_price)}€</span>
                       </div>
                       <a href="pis.html?id=${project.id}" class="link-a">Més detalls
                         <span class="ion-ios-arrow-forward"></span>
@@ -40,3 +40,7 @@ window.addEventListener('load', () => {
       });
       })
 });
+
+function formatDigit(value) {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}

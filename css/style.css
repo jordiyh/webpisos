@@ -1759,7 +1759,7 @@ footer .credits {
 
   .card-box-a .price-a,
   .card-box-b .price-a {
-    font-size: .9rem;
+    font-size: 1.2rem;
   }
 
   .card-box-a:hover .card-overlay-a-content {
@@ -1882,7 +1882,7 @@ footer .credits {
 
   .card-box-a .price-a,
   .card-box-b .price-a {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .card-overlay-a-content {
