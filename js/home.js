@@ -25,8 +25,8 @@ window.addEventListener('load', () => {
                         <p class="intro-title-top">${project.subtitle}</p>
                         <h1 class="intro-title mb-4">${project.title}</h1>
                         <p class="intro-subtitle intro-price">
-                          <a href="#">
-                            <span class="price-a">Des de ${formatDigit(project.min_price)}</span>
+                          <a href="pis.html?id=${project.id}">
+                            <span class="price-a">Des de ${formatDigit(project.min_price)} €</span>
                           </a>
                         </p>
                       </div>
