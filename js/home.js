@@ -17,8 +17,8 @@ window.addEventListener('load', () => {
           >
             <div class="overlay overlay-a"></div>
             <div class="intro-content display-table">
-              <div class="table-cell">
-                <div class="container">
+              <div class="table-cell" onclick="location.href='pis.html?id=${project.id}';">
+                <div class="container" >
                   <div class="row">
                     <div class="col-lg-8">
                       <div class="intro-body">
