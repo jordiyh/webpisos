@@ -28,9 +28,9 @@ window.addEventListener('load', () => {
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                      <a href="pis.html?id=${project.id}" class="link-a">
-                        <span class="price-a">Desde ${formatDigit(project.min_price)}€</span>
-                        </a>
+                      
+                        <span class="price-a"> Desde ${formatDigit(project.min_price)}€</span>
+                       
                       </div>
                       <a href="pis.html?id=${project.id}" class="link-a">Més detalls
                         <span class="ion-ios-arrow-forward"></span>
