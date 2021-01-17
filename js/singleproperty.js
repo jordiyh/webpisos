@@ -21,6 +21,14 @@ window.addEventListener('load', () => {
       const subtitle = document.getElementById('subtitle');
       subtitle.innerHTML = response.subtitle;
 
+      // Grid Image
+      const gridImage = document.createElement("img");
+      gridImage.src = 'https://admin.pisosautoproject.com' + response.grid_image;
+      gridImage.classList = 'w-100'
+
+      const gridImageWrapper = document.getElementById('grid-image-wrapper')
+      gridImageWrapper.appendChild(gridImage)
+
       // minimum price
       const minprice = document.getElementById('minprice');
       minprice.innerHTML = `Des de ${formatDigit(response.min_price)}€`;
